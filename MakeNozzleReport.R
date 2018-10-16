@@ -26,7 +26,7 @@ references<-newSection("References");
 #----  logo ------------
 html1 <- newHtml("<img src='dna_3.png' alt='' width=100% height=250 >")
 title <- newHtml( "<h1>Basic fastq report</h1>", style="color: #2E2E2E; text-align:left;font-family:courier" )
-
+author <- newHtml( "<h3>Created by Anna Williford</h3>", style="color: #2E2E2E; text-align:left;font-family:courier" )
 
 #---- input files -------
 Myfiles_names <- list.files(path=myPath_fastq, pattern="*fastq.gz", full.names=TRUE, recursive=FALSE)
@@ -52,9 +52,9 @@ fastqc_cite <- newCitation( title="FastQC v0.11.7", url="https://www.bioinformat
 fqtools_cite<- newCitation( authors="Alastair P.Droop", title="fqtools: An efficient software suite for modern FASTQ file manipulation", publication="Bioinformatics", issue="12", pages="1883-1884", year="2016", url="https://doi.org/10.1093/bioinformatics/btw088" );
 Nozzle_cite <- newCitation( authors="Nils Gehlenborg", title="Nozzle: a report generation toolkit for data analysis pipelines", publication="Bioinformatics", issue="29", pages="1089-1091", year="2013", url="http://bioinformatics.oxfordjournals.org/content/29/8/1089" );
 
-########## assemble report structure bottom-up ##############3
+########## assemble report structure bottom-up ##############
 myFiles<- addTo(myFiles, t2)
-dataOverview <- addTo( dataOverview, t ); # parent, child_1, ..., child_n 
+dataOverview <- addTo( dataOverview, t ); 
 
 for (item in qualFigures){
   item<-paste0("../QualityFig/",basename(item))
@@ -75,7 +75,7 @@ for (item in dupLevelsFigures){
 }
 
 references<-addTo(references, ref_p1, fastqc_cite, fqtools_cite, Nozzle_cite )
-report <- addTo( report, title, html1, myFiles, dataOverview, qualScores, qualScorePos, dupLevels,references);
+report <- addTo( report, title, author, html1, myFiles, dataOverview, qualScores, qualScorePos, dupLevels,references);
 
 ############ render report to file #################
 
