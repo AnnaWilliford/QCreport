@@ -1,0 +1,5 @@
+FileName	ReadCount	PercentDistinctReads	ReadLength	Q30
+SRR1746797.fastq.gz	9458192	34.4	50	72.1
+SRR1746798.fastq.gz	14062543	20.7	50	75.36
+SRR1746820.fastq.gz	7444867	34.5	50	73.41
+SRR1746821.fastq.gz	2324418	62.9	46	88.64
