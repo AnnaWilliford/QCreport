@@ -6,7 +6,7 @@
 #
 # Author: Anna Williford
 #
-# Date: 15/10/2018
+# Date: 10/15/2018
 #
 # Description:
 #			This script uses FastQC, fqtools, Nozzle.R1 R package and in-house Rscripts to generate report
